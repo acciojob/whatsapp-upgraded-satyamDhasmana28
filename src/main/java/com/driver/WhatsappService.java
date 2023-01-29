@@ -10,8 +10,8 @@ public class WhatsappService {
     Map<Group,List<Message>> groupMessageHashMap = new HashMap<>();
 //    key will be group Name and value will be admin Name
     Map<String,String> groupNameAndAdminHashMap = new HashMap<>();
-    int groupCount=0;
-    int messageId=0;
+    int groupCount=1;
+    int messageId=1;
     public String createUser(String name, String mobile) throws Exception {
        if(userHashMap.containsKey(mobile)){
            throw new Exception("User already exists");
