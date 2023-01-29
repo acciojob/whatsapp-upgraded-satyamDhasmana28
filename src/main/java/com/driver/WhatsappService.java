@@ -115,6 +115,6 @@ public class WhatsappService {
         if(groupNameAndAdminHashMap.containsValue(user.getName())){
            throw new Exception("Cannot remove admin");
         }
-
+        return 0;
     }
 }
