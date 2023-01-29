@@ -115,9 +115,21 @@ public class WhatsappService {
         if(groupNameAndAdminHashMap.containsValue(user.getName())){
            throw new Exception("Cannot remove admin");
         }
-        else{
+        else if(!isExists(user)){
             throw new Exception("User not found");
         }
         return 0;
+    }
+    public boolean isExists(User user){
+       for(String adminName : groupAndPersonalChatHashMap.keySet()){
+           List<User> userList = groupAndPersonalChatHashMap.get(adminName);
+           for(User u : userList){
+               if(Objects.equals(user, u)){
+                   return true;
+               }
+           }
+       }
+
+        return false;
     }
 }
